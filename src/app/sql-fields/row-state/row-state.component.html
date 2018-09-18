@@ -1,0 +1,18 @@
+<div *ngIf="row">
+    <form>
+        <mat-checkbox class="field-spacing" [(ngModel)]="row.isRequired" name="isRequired">isRequired</mat-checkbox>
+        <mat-checkbox class="field-spacing" [(ngModel)]="row.isLocked" name="isLocked">isLocked</mat-checkbox>
+        <mat-form-field class="field-spacing">
+            <input matInput [(ngModel)]="row.name" name="name" placeholder="Name">
+        </mat-form-field>
+        <mat-form-field class="field-spacing">
+            <input matInput [(ngModel)]="row.typeId" name="typeId" placeholder="Type Id">
+        </mat-form-field>
+        <mat-form-field class="field-spacing">
+            <input matInput [(ngModel)]="row.propertyId" name="propertyId" placeholder="Property id">
+        </mat-form-field>
+        <mat-form-field class="field-spacing">
+            <input matInput [(ngModel)]="row.numberOfColumns" name="numberOfColumns" placeholder="Number of Columns">
+        </mat-form-field>
+    </form>
+</div>

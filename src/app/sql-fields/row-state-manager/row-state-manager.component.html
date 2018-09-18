@@ -1,0 +1,42 @@
+<div>
+    <form>
+        <mat-form-field class="field">
+            <input matInput
+                [(ngModel)]="sectionId"
+                name="sectionId"
+                placeholder="SectionId">
+        </mat-form-field>
+        <mat-form-field class="field">
+            <input matInput
+                [(ngModel)]="sectionName"
+                name="sectionName"
+                placeholder="Section Name">
+        </mat-form-field>
+    </form>
+    <app-row-state *ngFor="let row of rows; let i=index"
+        [row]="rowMap[i]"></app-row-state>
+    <button type="button"
+        (click)="addRow()">Add Row</button>
+    <div class="row-state-container">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>SQL Output</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div>(Id, ParentId ,SectionId ,IsRequired ,IsLocked ,SequenceNumber ,Name ,SystemName ,TypeId ,PropertyId ,NumberOfColumns)</div>
+                <div *ngFor="let row of rowMap | keyvalue">
+                    Key: <b>{{row.isRequired}}</b>
+                    ([NEWID] ,NULL ,{{sectionId}} ,{{row.value.isRequired ? 1: 0}} ,{{row.value.isLocked ? 1 : 0}} ,{{row.key}} ,{{row.value.name}} ,{{sectionName}}{{row.value.name | strip}} ,{{row.value.typeId}} ,{{row.value.propertyId}} ,{{row.value.numberOfColumns}}),
+                </div>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Code Output</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                Coming soon
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
