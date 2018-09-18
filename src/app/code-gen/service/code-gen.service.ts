@@ -6,18 +6,6 @@ export class CodeGenService {
 
 
   constructor() {
-    this.fieldMap[26] = `
-    <div class="align-left">
-    <div>case DisplayField.ZZGENZZ:</div>
-    <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.ValidationSetController({</div>
-    <div class="indent-options">fieldId: DisplayField.ZZGENZZ,</div>
-    <div class="indent-options">isRequired: field.isRequired,</div>
-    <div class="indent-options">label: field.name,</div>
-    <div class="indent-options">name: field.systemName,</div>
-    <div class="indent-options">applyDefaultValue: shouldApplyDefault</div>
-    <div class="indent-return">}));</div>
-    </div>
-    `;
     this.fieldMap[17] = `
       <div class="align-left">
       <div>case DisplayField.ZZGENZZ:</div>
@@ -40,6 +28,18 @@ export class CodeGenService {
       <div class="indent-options">maxLength: 1 // Maximum Character Count,</div>
       <div class="indent-return">}));</div>
       <div>
+    `;
+    this.fieldMap[26] = `
+      <div class="align-left">
+      <div>case DisplayField.ZZGENZZ:</div>
+      <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.ValidationSetController({</div>
+      <div class="indent-options">fieldId: DisplayField.ZZGENZZ,</div>
+      <div class="indent-options">isRequired: field.isRequired,</div>
+      <div class="indent-options">label: field.name,</div>
+      <div class="indent-options">name: field.systemName,</div>
+      <div class="indent-options">applyDefaultValue: shouldApplyDefault</div>
+      <div class="indent-return">}));</div>
+      </div>
     `;
   }
 
