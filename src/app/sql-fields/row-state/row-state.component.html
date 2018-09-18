@@ -6,7 +6,12 @@
             <input matInput [(ngModel)]="row.name" name="name" placeholder="Name">
         </mat-form-field>
         <mat-form-field class="field-spacing">
-            <input matInput [(ngModel)]="row.typeId" name="typeId" placeholder="Type Id">
+          <input type="text" placeholder="Type Id" aria-label="typeId" matInput [formControl]="myControl" [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
+              {{option.name}}
+            </mat-option>
+          </mat-autocomplete>
         </mat-form-field>
         <mat-form-field class="field-spacing">
             <input matInput [(ngModel)]="row.propertyId" name="propertyId" placeholder="Property id">
