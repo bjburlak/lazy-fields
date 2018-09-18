@@ -31,6 +31,6 @@ export class RowStateManagerComponent implements OnInit {
             isRequired: false,
             isLocked: false,
         });
-        this.rowMap[keyCount + 1] = <IRowData>{};
+        this.rowMap[keyCount] = <IRowData>{};
     }
 }

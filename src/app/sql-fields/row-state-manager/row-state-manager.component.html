@@ -26,7 +26,7 @@
                 <div>(Id, ParentId ,SectionId ,IsRequired ,IsLocked ,SequenceNumber ,Name ,SystemName ,TypeId ,PropertyId ,NumberOfColumns)</div>
                 <div *ngFor="let row of rowMap | keyvalue">
                     Key: <b>{{row.isRequired}}</b>
-                    ([NEWID] ,NULL ,{{sectionId}} ,{{row.value.isRequired ? 1: 0}} ,{{row.value.isLocked ? 1 : 0}} ,{{row.key}} ,{{row.value.name}} ,{{sectionName}}{{row.value.name | strip}} ,{{row.value.typeId}} ,{{row.value.propertyId}} ,{{row.value.numberOfColumns}}),
+                    ([NEWID] ,NULL ,{{sectionId}} ,{{row.value.isRequired ? 1: 0}} ,{{row.value.isLocked ? 1 : 0}} ,{{row.key + 1}} ,N'{{row.value.name}}' , N'{{sectionName}}{{row.value.name | strip}}' ,{{row.value.typeId}} ,{{row.value.propertyId}} ,{{row.value.numberOfColumns}}),
                 </div>
             </mat-card-content>
         </mat-card>
