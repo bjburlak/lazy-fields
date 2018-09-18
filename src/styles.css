@@ -1,1 +1,11 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.align-left {
+  text-align: left;
+}
+.indent-return{
+  margin-left: 5px;
+}
+.indent-options {
+  margin-left: 10px;
+}
