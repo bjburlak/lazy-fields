@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FieldDefinitionId } from 'src/app/enums/field-definition.enum';
+import { FieldDefinition } from 'src/app/enums/field-definition.enum';
 
 @Injectable()
 export class CodeGenService {
@@ -7,7 +7,7 @@ export class CodeGenService {
 
 
   constructor() {
-    this.fieldMap[FieldDefinitionId.MasterFile] = `
+    this.fieldMap[FieldDefinition.MasterFile] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
           <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.MasterFileController({</div>
@@ -19,43 +19,43 @@ export class CodeGenService {
           <div class="indent-return">}));</div>
       </div>
     `;
-    this.fieldMap[FieldDefinitionId.Combobox] = `
+    this.fieldMap[FieldDefinition.Combobox] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
 
       </div>
       `;
-    this.fieldMap[FieldDefinitionId.FunctionalSet] = `
+    this.fieldMap[FieldDefinition.FunctionalSet] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
 
       </div>
       `;
-    this.fieldMap[FieldDefinitionId.GeoVerify] = `
+    this.fieldMap[FieldDefinition.GeoVerify] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
 
       </div>
       `;
-    this.fieldMap[FieldDefinitionId.GlobalVehicle] = `
+    this.fieldMap[FieldDefinition.GlobalVehicle] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
 
       </div>
       `;
-    this.fieldMap[FieldDefinitionId.HeightRange] = `
+    this.fieldMap[FieldDefinition.HeightRange] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
 
       </div>
       `;
-    this.fieldMap[FieldDefinitionId.MultiSelect] = `
+    this.fieldMap[FieldDefinition.MultiSelect] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
 
       </div>
       `;
-    this.fieldMap[FieldDefinitionId.Numeric] = `
+    this.fieldMap[FieldDefinition.Numeric] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
           <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.NumericController({</div>
@@ -67,7 +67,7 @@ export class CodeGenService {
           <div class="indent-return">}));</div>
       </div>
     `;
-    this.fieldMap[FieldDefinitionId.TextArea] = `
+    this.fieldMap[FieldDefinition.TextArea] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
           <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.TextareaController({</div>
@@ -78,7 +78,7 @@ export class CodeGenService {
           <div class="indent-return">}));</div>
       <div>
     `;
-    this.fieldMap[FieldDefinitionId.ValidationSet] = `
+    this.fieldMap[FieldDefinition.ValidationSet] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
           <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.ValidationSetController({</div>
@@ -90,13 +90,13 @@ export class CodeGenService {
           <div class="indent-return">}));</div>
       </div>
     `;
-    this.fieldMap[FieldDefinitionId.DateTime] = `
+    this.fieldMap[FieldDefinition.DateTime] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
 
       </div>
     `;
-    this.fieldMap[FieldDefinitionId.SocialSecurityNumber] = `
+    this.fieldMap[FieldDefinition.SocialSecurityNumber] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
 
