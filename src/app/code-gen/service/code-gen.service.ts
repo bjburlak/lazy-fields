@@ -31,13 +31,13 @@ export class CodeGenService {
             <div class="indent-options">valueField: ''</div>
           <div class="indent-return">}));</div>
       </div>
-      `;
+    `;
     this.fieldMap[FieldDefinition.FunctionalSet] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
 
       </div>
-      `;
+    `;
     this.fieldMap[FieldDefinition.GeoVerify] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
@@ -47,25 +47,25 @@ export class CodeGenService {
             <div class="indent-options">isRequired: field.isRequired,</div>
           <div class="indent-return">}));</div>
       </div>
-      `;
+    `;
     this.fieldMap[FieldDefinition.GlobalVehicle] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
 
       </div>
-      `;
+    `;
     this.fieldMap[FieldDefinition.HeightRange] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
 
       </div>
-      `;
+    `;
     this.fieldMap[FieldDefinition.MultiSelect] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
 
       </div>
-      `;
+    `;
     this.fieldMap[FieldDefinition.Numeric] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
