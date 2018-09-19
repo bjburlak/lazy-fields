@@ -22,7 +22,14 @@ export class CodeGenService {
     this.fieldMap[FieldDefinition.Combobox] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
-
+          <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.ComboboxController({</div>
+            <div class="indent-options">name: field.systemName,</div>
+            <div class="indent-options">label: field.name,</div>
+            <div class="indent-options">isRequired: field.isRequired,</div>
+            <div class="indent-options">dataSource: [],</div>
+            <div class="indent-options">primaryDisplayField: '',</div>
+            <div class="indent-options">valueField: ''</div>
+          <div class="indent-return">}));</div>
       </div>
       `;
     this.fieldMap[FieldDefinition.FunctionalSet] = `
@@ -34,7 +41,11 @@ export class CodeGenService {
     this.fieldMap[FieldDefinition.GeoVerify] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
-
+          <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.GeoVerifyController({</div>
+            <div class="indent-options">name: field.systemName,</div>
+            <div class="indent-options">label: field.name,</div>
+            <div class="indent-options">isRequired: field.isRequired,</div>
+          <div class="indent-return">}));</div>
       </div>
       `;
     this.fieldMap[FieldDefinition.GlobalVehicle] = `
@@ -102,7 +113,16 @@ export class CodeGenService {
 
       </div>
     `;
-
+    this.fieldMap[FieldDefinition.TextBox] = `
+      <div class="align-left">
+        <div>case DisplayField.ZZGENZZ:</div>
+          <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.InputController({</div>
+            <div class="indent-options">name: field.systemName,</div>
+            <div class="indent-options">label: field.name,</div>
+            <div class="indent-options">isRequired: field.isRequired</div>
+          <div class="indent-return">}));</div>
+      </div>
+    `;
   }
 
   public getField(displayName: string, fieldTypeId: string): string {
