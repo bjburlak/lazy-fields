@@ -14,7 +14,7 @@ import { IRowData } from '../../contracts/row-data.interface';
 export class RowStateComponent implements OnInit {
     @Input() row: IRowData;
 
-    public readonly fieldOptions: any[] = [
+    public readonly fieldOptions: {id: number, name: string}[] = [
       {id: 1, name: 'Agency'},
       {id: 2, name: 'Checkbox'},
       {id: 3, name: 'Checked Master File'},
@@ -92,7 +92,7 @@ export class RowStateComponent implements OnInit {
     );
   }
 
-  private _filter(value: string): string[] {
+  private _filter(value: string): {id: number; name: string; }[] {
     const filterValue = value.toLowerCase();
 
     const filtered = this.fieldOptions.filter(option => option.name.toLowerCase().indexOf(filterValue) === 0);
