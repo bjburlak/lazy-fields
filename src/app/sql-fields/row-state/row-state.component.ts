@@ -94,9 +94,10 @@ export class RowStateComponent implements OnInit {
 
   private _filter(value: string): {id: number; name: string; }[] {
     const filterValue = value.toLowerCase();
+    return this.fieldOptions.filter(option => option.name.toLowerCase().indexOf(filterValue) === 0);
+  }
 
-    const filtered = this.fieldOptions.filter(option => option.name.toLowerCase().indexOf(filterValue) === 0);
-    if (filtered.length === 1) { this.row.typeId = filtered[0].id; }
-    return filtered;
+  public optionSelected(event: any): void {
+    this.row.typeId = this.fieldOptions.find(x => x.name === event.option.value).id;
   }
 }

@@ -7,6 +7,23 @@ export class CodeGenService {
 
 
   constructor() {
+    this.fieldMap[FieldDefinition.Agency] = `
+      <div class="align-left">
+        <div>case DisplayField.ZZGENZZ:</div>
+          <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.AgencyComboboxController({</div>
+          <div class="indent-options">name: field.systemName,</div>
+          <div class="indent-options">label: field.name,</div>
+          <div class="indent-options">isRequired: field.isRequired,</div>
+          <div class="indent-options">isMultiSelect: false,</div>
+          <div class="indent-options">displayInactive: true,</div>
+          <div class="indent-options">filterByPermissions: {</div>
+          <div class="indent-options">componentType: null,</div>
+          <div class="indent-options">permissionType: PermissionType.Execute</div>
+          <div class="indent-options">},</div>
+          <div class="indent-options">onChange: (newValue) => this.onAgencyChanged(newValue)</div>
+          <div class="indent-return">}));</div>
+      </div>
+    `;
     this.fieldMap[FieldDefinition.MasterFile] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>

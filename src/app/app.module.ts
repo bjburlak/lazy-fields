@@ -12,6 +12,7 @@ import { CodeGenComponent } from './code-gen/code-gen.component';
 import { CodeGenService } from './code-gen/service/code-gen.service';
 import { AddPipe } from './pipes/add.pipe';
 import { StripPipe } from './pipes/strip-space.pipe';
+import { TypePaddingPipe } from './pipes/type-padding.pipe';
 import { RowStateManagerComponent } from './sql-fields/row-state-manager/row-state-manager.component';
 import { RowStateComponent } from './sql-fields/row-state/row-state.component';
 
@@ -22,7 +23,8 @@ import { RowStateComponent } from './sql-fields/row-state/row-state.component';
     CodeGenComponent,
     RowStateComponent,
     RowStateManagerComponent,
-    StripPipe
+    StripPipe,
+    TypePaddingPipe
   ],
   imports: [
     BrowserAnimationsModule,

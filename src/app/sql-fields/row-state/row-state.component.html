@@ -7,7 +7,7 @@
         </mat-form-field>
         <mat-form-field class="field-spacing">
           <input type="text" placeholder="Type Id" aria-label="typeId" matInput [formControl]="myControl" [matAutocomplete]="auto">
-          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-autocomplete (optionSelected)="optionSelected($event)" autoActiveFirstOption #auto="matAutocomplete">
             <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
               {{option.name}}
             </mat-option>
