@@ -5,7 +5,7 @@ import { CodeGenService } from './service/code-gen.service';
 
 @Component({
   selector: 'app-code-gen',
-  templateUrl: 'code-gen.component.html',
+  template: `<code [innerHTML]="value"></code>`,
   styleUrls: ['./code-gen.component.scss']
 })
 
