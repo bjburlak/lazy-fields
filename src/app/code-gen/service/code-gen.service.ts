@@ -3,8 +3,15 @@ import { FieldDefinition } from 'src/app/enums/field-definition.enum';
 
 @Injectable()
 export class CodeGenService {
-  private fieldMap: {[id: number]: string} = {};
 
+  private fieldMap: {[id: number]: string} = {};
+  private noFieldAvailable = `
+      <div class="align-left">
+        <div>case DisplayField.ZZGENZZ:</div>
+          <div class="indent-return">// NO FIELD FOR YOU YET BUT HERE'S A START</div>
+          <div class="indent-return">return null;</div>
+      </div>
+    `;
 
   constructor() {
     this.fieldMap[FieldDefinition.Agency] = `
@@ -49,12 +56,6 @@ export class CodeGenService {
           <div class="indent-return">}));</div>
       </div>
     `;
-    this.fieldMap[FieldDefinition.FunctionalSet] = `
-      <div class="align-left">
-        <div>case DisplayField.ZZGENZZ:</div>
-
-      </div>
-    `;
     this.fieldMap[FieldDefinition.GeoVerify] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
@@ -63,24 +64,6 @@ export class CodeGenService {
             <div class="indent-options">label: field.name,</div>
             <div class="indent-options">isRequired: field.isRequired,</div>
           <div class="indent-return">}));</div>
-      </div>
-    `;
-    this.fieldMap[FieldDefinition.GlobalVehicle] = `
-      <div class="align-left">
-        <div>case DisplayField.ZZGENZZ:</div>
-
-      </div>
-    `;
-    this.fieldMap[FieldDefinition.HeightRange] = `
-      <div class="align-left">
-        <div>case DisplayField.ZZGENZZ:</div>
-
-      </div>
-    `;
-    this.fieldMap[FieldDefinition.MultiSelect] = `
-      <div class="align-left">
-        <div>case DisplayField.ZZGENZZ:</div>
-
       </div>
     `;
     this.fieldMap[FieldDefinition.Numeric] = `
@@ -118,18 +101,6 @@ export class CodeGenService {
           <div class="indent-return">}));</div>
       </div>
     `;
-    this.fieldMap[FieldDefinition.DateTime] = `
-      <div class="align-left">
-        <div>case DisplayField.ZZGENZZ:</div>
-
-      </div>
-    `;
-    this.fieldMap[FieldDefinition.SocialSecurityNumber] = `
-      <div class="align-left">
-        <div>case DisplayField.ZZGENZZ:</div>
-
-      </div>
-    `;
     this.fieldMap[FieldDefinition.TextBox] = `
       <div class="align-left">
         <div>case DisplayField.ZZGENZZ:</div>
@@ -145,10 +116,7 @@ export class CodeGenService {
   public getField(displayName: string, fieldTypeId: string): string {
     if (!fieldTypeId) { return ''; }
     const numberFieldTypeId = parseInt(fieldTypeId, 10);
-    if (!this.fieldMap[numberFieldTypeId]) {
-      return '';
-    }
-    const fieldString = this.fieldMap[numberFieldTypeId];
+    const fieldString = this.fieldMap[numberFieldTypeId] ? this.fieldMap[numberFieldTypeId] : this.noFieldAvailable;
     displayName = displayName.charAt(0).toUpperCase() + displayName.substr(1);
     return fieldString.replace(/ZZGENZZ/g, displayName);
   }

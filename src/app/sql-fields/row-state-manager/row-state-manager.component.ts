@@ -1,11 +1,6 @@
-import {
-    Component,
-    OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {
-    IRowData,
-} from '../../contracts/row-data.interface';
+import { IRowData } from '../../contracts/row-data.interface';
 
 @Component({
     selector: 'app-row-state-manager',
@@ -30,6 +25,7 @@ export class RowStateManagerComponent implements OnInit {
         this.rows.push(<IRowData>{
             isRequired: false,
             isLocked: false,
+            numberOfColumns: 1
         });
         this.rowMap[keyCount] = <IRowData>{};
     }
