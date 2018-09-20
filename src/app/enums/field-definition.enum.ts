@@ -61,3 +61,83 @@ export const enum FieldDefinition {
   HazardousMaterialViewer = 63,
   TimeEntryViewer = 64
 }
+const fieldDefinitions: { [id: number]: string } = {};
+fieldDefinitions[FieldDefinition.Agency] = `
+  <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.AgencyComboboxController({</div>
+    <div class="indent-options">name: field.systemName,</div>
+    <div class="indent-options">label: field.name,</div>
+    <div class="indent-options">isRequired: field.isRequired,</div>
+    <div class="indent-options">isMultiSelect: false,</div>
+    <div class="indent-options">displayInactive: true,</div>
+    <div class="indent-options">filterByPermissions: {</div>
+    <div class="indent-options">componentType: null,</div>
+    <div class="indent-options">permissionType: PermissionType.Execute</div>
+    <div class="indent-options">},</div>
+    <div class="indent-options">onChange: (newValue) => this.onAgencyChanged(newValue)</div>
+  <div class="indent-return">}));</div>
+`;
+fieldDefinitions[FieldDefinition.MasterFile] = `
+  <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.MasterFileController({</div>
+    <div class="indent-options">filter: [{ type: null , value: null }],</div>
+    <div class="indent-options">isRequired: field.isRequired,</div>
+    <div class="indent-options">label: field.name,</div>
+    <div class="indent-options">masterFileType: null,</div>
+    <div class="indent-options">name: field.systemName</div>
+  <div class="indent-return">}));</div>
+`;
+fieldDefinitions[FieldDefinition.Combobox] = `
+  <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.ComboboxController({</div>
+    <div class="indent-options">name: field.systemName,</div>
+    <div class="indent-options">label: field.name,</div>
+    <div class="indent-options">isRequired: field.isRequired,</div>
+    <div class="indent-options">dataSource: [],</div>
+    <div class="indent-options">primaryDisplayField: '',</div>
+    <div class="indent-options">valueField: ''</div>
+  <div class="indent-return">}));</div>
+`;
+fieldDefinitions[FieldDefinition.GeoVerify] = `
+  <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.GeoVerifyController({</div>
+    <div class="indent-options">name: field.systemName,</div>
+    <div class="indent-options">label: field.name,</div>
+    <div class="indent-options">isRequired: field.isRequired,</div>
+  <div class="indent-return">}));</div>
+`;
+fieldDefinitions[FieldDefinition.Numeric] = `
+  <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.NumericController({</div>
+    <div class="indent-options">isRequired: field.isRequired,</div>
+    <div class="indent-options">label: field.name,</div>
+    <div class="indent-options">name: field.systemName,</div>
+    <div class="indent-options">min: 0, // Minimum Value,</div>
+    <div class="indent-options">max: 1 // Maximum Value</div>
+  <div class="indent-return">}));</div>
+`;
+fieldDefinitions[FieldDefinition.TextArea] = `
+  <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.TextareaController({</div>
+    <div class="indent-options">name: field.systemName,</div>
+    <div class="indent-options">label: field.name,</div>
+    <div class="indent-options">isRequired: field.isRequired,</div>
+    <div class="indent-options">maxLength: 1 // Maximum Character Count,</div>
+  <div class="indent-return">}));</div>
+`;
+fieldDefinitions[FieldDefinition.ValidationSet] = `
+  <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.ValidationSetController({</div>
+    <div class="indent-options">fieldId: DisplayField.ZZGENZZ,</div>
+    <div class="indent-options">isRequired: field.isRequired,</div>
+    <div class="indent-options">label: field.name,</div>
+    <div class="indent-options">name: field.systemName,</div>
+    <div class="indent-options">applyDefaultValue: shouldApplyDefault</div>
+  <div class="indent-return">}));</div>
+`;
+fieldDefinitions[FieldDefinition.TextBox] = `
+  <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.InputController({</div>
+    <div class="indent-options">name: field.systemName,</div>
+    <div class="indent-options">label: field.name,</div>
+    <div class="indent-options">isRequired: field.isRequired</div>
+  <div class="indent-return">}));</div>
+`;
+fieldDefinitions[FieldDefinition.LocationSearch] = `
+  <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.LocationSearchController({</div>
+    <div class="indent-options">name: field.systemName</div>
+  <div class="indent-return">}));</div>
+`;
+export const FieldDefinitionTemplates = fieldDefinitions;
