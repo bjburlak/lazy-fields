@@ -121,7 +121,7 @@ fieldDefinitions[FieldDefinition.TextArea] = `
 `;
 fieldDefinitions[FieldDefinition.ValidationSet] = `
   <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.ValidationSetController({</div>
-    <div class="indent-options">fieldId: field.id,</div>
+    <div class="indent-options">propertyId: field.propertyId,</div>
     <div class="indent-options">isRequired: field.isRequired,</div>
     <div class="indent-options">label: field.name,</div>
     <div class="indent-options">name: field.systemName,</div>
