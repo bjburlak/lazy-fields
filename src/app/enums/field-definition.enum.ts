@@ -140,4 +140,25 @@ fieldDefinitions[FieldDefinition.LocationSearch] = `
     <div class="indent-options">name: field.systemName</div>
   <div class="indent-return">}));</div>
 `;
+fieldDefinitions[FieldDefinition.Date] = `
+  <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.DatepickerController({</div>
+    <div class="indent-options">isRequired: field.isRequired,</div>
+    <div class="indent-options">label: field.name,</div>
+    <div class="indent-options">name: field.systemName</div>
+  <div class="indent-return">}));</div>
+`;
+fieldDefinitions[FieldDefinition.DateTime] = `
+  <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.DateTimePickerController({</div>
+    <div class="indent-options">name: field.systemName,</div>
+    <div class="indent-options">label: field.name,</div>
+    <div class="indent-options">isRequired: field.isRequired,</div>
+  <div class="indent-return">}));</div>
+`;
+fieldDefinitions[FieldDefinition.RadioButtons] = `
+  <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.RadioButtonsController({</div>
+    <div class="indent-options">datasource: [],</div>
+    <div class="indent-options">label: field.name,</div>
+    <div class="indent-options">name: field.systemName</div>
+  <div class="indent-return">}));</div>
+`;
 export const FieldDefinitionTemplates = fieldDefinitions;
