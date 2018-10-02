@@ -132,7 +132,8 @@ fieldDefinitions[FieldDefinition.TextBox] = `
   <div class="indent-return">return this._formInteropService.createField(formName, field.systemName, new this.InputController({</div>
     <div class="indent-options">name: field.systemName,</div>
     <div class="indent-options">label: field.name,</div>
-    <div class="indent-options">isRequired: field.isRequired</div>
+    <div class="indent-options">isRequired: field.isRequired,</div>
+    <div class="indent-options">maxLength: 1 // Maximum Character Count</div>
   <div class="indent-return">}));</div>
 `;
 fieldDefinitions[FieldDefinition.LocationSearch] = `
@@ -159,6 +160,15 @@ fieldDefinitions[FieldDefinition.RadioButtons] = `
     <div class="indent-options">datasource: [],</div>
     <div class="indent-options">label: field.name,</div>
     <div class="indent-options">name: field.systemName</div>
+  <div class="indent-return">}));</div>
+`;
+fieldDefinitions[FieldDefinition.HazardousMaterialViewer] = `
+  <div class="indent-return">return this._hazardousMaterialViewerFactory.createField({</div>
+    <div class="indent-options">agencyId: 1, //this._recordDetail.agency.id</div>
+    <div class="indent-options">label: field.name,</div>
+    <div class="indent-options">isRequired: field.isRequired,</div>
+    <div class="indent-options">name: field.systemName</div>
+    <div class="indent-options">isViewOnly: false</div>
   <div class="indent-return">}));</div>
 `;
 export const FieldDefinitionTemplates = fieldDefinitions;
